@@ -1,8 +1,9 @@
 import React from "react";
+import { Grid } from "../Grid";
 import * as C from "./style";
 import { useForm } from "./useForm";
 
-export const Form = ({ handleAdd }) => {
+export const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
   const {
     desc,
     setDesc,
@@ -47,6 +48,7 @@ export const Form = ({ handleAdd }) => {
         </C.RadioGroup>
         <C.Button onClick={handleSave}>Adicionar</C.Button>
       </C.Container>
+      <Grid itens={transactionsList} setItens={setTransactionsList}/>
     </>
   );
 };
